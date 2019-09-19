@@ -44,8 +44,9 @@ export class ActivityFormValues implements IActivityFormValues {
 }
 
 export interface IAttendee {
-  username: string,
-  displayName: string,
-  image: string,
-  isHost: boolean
+  username: string;
+  displayName: string;
+  image: string;
+  isHost: boolean;
+  following?: boolean;
 }
