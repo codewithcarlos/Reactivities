@@ -5,6 +5,7 @@ import { Form, Button } from 'semantic-ui-react';
 import { IProfile } from '../../app/models/profile';
 import TextInput from '../../app/common/form/TextInput';
 import TextAreaInput from '../../app/common/form/TextAreaInput';
+import { observer } from 'mobx-react-lite';
 
 const validate = combineValidators({
   displayName: isRequired('displayName')
@@ -13,14 +14,19 @@ const validate = combineValidators({
 interface IProps {
   updateProfile: (profile: IProfile) => void;
   profile: IProfile;
+  setEditMode: (editMode: boolean) => void;
 }
 
-const ProfileEditForm: React.FC<IProps> = ({ updateProfile, profile }) => {
+const ProfileEditForm: React.FC<IProps> = ({ updateProfile, profile, setEditMode }) => {
   return (
     <FinalForm
       validate={validate}
       initialValues={profile!}
-      onSubmit={updateProfile}
+      onSubmit={(e) => {
+        setEditMode(false);
+        updateProfile(e);
+      }
+      }
       render={({ handleSubmit, invalid, pristine, submitting }) => (
         <Form onSubmit={handleSubmit} error>
           <Field
@@ -50,4 +56,4 @@ const ProfileEditForm: React.FC<IProps> = ({ updateProfile, profile }) => {
   );
 };
 
-export default ProfileEditForm;
+export default observer(ProfileEditForm);

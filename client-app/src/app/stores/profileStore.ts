@@ -20,6 +20,19 @@ export default class ProfileStore {
         }
       }
     );
+
+    reaction(
+      () => this.followStateChanged,
+      followStateChanged => {
+        if (this.activeTab === 3 || this.activeTab === 4) {
+          const predicate = this.activeTab === 3 ? 'followers' : 'following';
+          this.loadFollowings(predicate);
+        } else {
+          this.followings = [];
+        }
+      }
+    );
+    
   }
 
   @observable profile: IProfile | null = null;
@@ -30,6 +43,7 @@ export default class ProfileStore {
   @observable activeTab: number = 0;
   @observable userActivities: IUserActivity[] = [];
   @observable loadingActivities = false;
+  @observable followStateChanged = false;
 
   @computed get isCurrentUser() {
     if (this.rootStore.userStore.user && this.profile) {
@@ -60,6 +74,10 @@ export default class ProfileStore {
 
   @action setActiveTab = (activeIndex: number) => {
     this.activeTab = activeIndex;
+  };
+
+  @action setFollowStateChanged = (followStateChanged: boolean) => {
+    this.followStateChanged = followStateChanged;
   };
 
   @action loadProfile = async (username: string) => {
@@ -161,8 +179,9 @@ export default class ProfileStore {
       runInAction(() => {
         this.profile!.following = true;
         this.profile!.followersCount++;
+        this.setFollowStateChanged(!this.followStateChanged);
         this.loading = false;
-      });
+      }); 
     } catch (error) {
       toast.error('Problem following user');
       runInAction(() => {
@@ -177,6 +196,7 @@ export default class ProfileStore {
       runInAction(() => {
         this.profile!.following = false;
         this.profile!.followersCount--;
+        this.setFollowStateChanged(!this.followStateChanged);
         this.loading = false;
       });
     } catch (error) {

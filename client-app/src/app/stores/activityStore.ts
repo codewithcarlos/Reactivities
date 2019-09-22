@@ -1,4 +1,4 @@
-import { observable, action, computed, runInAction, reaction } from 'mobx';
+import { observable, action, computed, runInAction, reaction, toJS } from 'mobx';
 import { SyntheticEvent } from 'react';
 import { IActivity } from '../models/activity';
 import agent from '../api/agent';
@@ -22,7 +22,7 @@ export default class ActivityStore {
         this.activityRegistry.clear();
         this.loadActivities();
       }
-    )
+    );
   }
 
   @observable activityRegistry = new Map();
@@ -41,7 +41,7 @@ export default class ActivityStore {
     if (predicate !== 'all') {
       this.predicate.set(predicate, value);
     }
-  }
+  };
 
   @computed get axiosParams() {
     const params = new URLSearchParams();
@@ -49,11 +49,11 @@ export default class ActivityStore {
     params.append('offset', `${this.page ? this.page * LIMIT : 0}`);
     this.predicate.forEach((value, key) => {
       if (key === 'startDate') {
-        params.append(key, value.toISOString())
+        params.append(key, value.toISOString());
       } else {
-        params.append(key, value)
+        params.append(key, value);
       }
-    })
+    });
     return params;
   }
 
@@ -67,7 +67,7 @@ export default class ActivityStore {
 
   @action createHubConnection = () => {
     this.hubConnection = new HubConnectionBuilder()
-      .withUrl('http://localhost:5000/chat', {
+      .withUrl(process.env.REACT_APP_API_CHAT_URL!, {
         accessTokenFactory: () => this.rootStore.commonStore.token!
       })
       .configureLogging(LogLevel.Information)
@@ -126,7 +126,7 @@ export default class ActivityStore {
     this.loadingInitial = true;
     try {
       const activitiesEnvelope = await agent.Activities.list(this.axiosParams);
-      const {activities, activityCount} = activitiesEnvelope;
+      const { activities, activityCount } = activitiesEnvelope;
       runInAction('loading activities', () => {
         activities.forEach(activity => {
           setActivityProps(activity, this.rootStore.userStore.user!);
@@ -147,7 +147,7 @@ export default class ActivityStore {
     let activity = this.getActivity(id);
     if (activity) {
       this.activity = activity;
-      return activity;
+      return toJS(activity);
     } else {
       this.loadingInitial = true;
       try {

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Tab, Grid, Header, Button } from 'semantic-ui-react';
 import { RootStoreContext } from '../../app/stores/rootStore';
 import ProfileEditForm from './ProfileEditForm';
+import { observer } from 'mobx-react-lite';
 
 const ProfileDescription = () => {
   const rootStore = useContext(RootStoreContext);
@@ -29,7 +30,7 @@ const ProfileDescription = () => {
         </Grid.Column>
         <Grid.Column width={16}>
           {editMode ? (
-            <ProfileEditForm updateProfile={updateProfile} profile={profile!} />
+            <ProfileEditForm updateProfile={updateProfile} profile={profile!} setEditMode={setEditMode} />
           ) : (
             <span>{profile!.bio}</span>
           )}
@@ -39,4 +40,4 @@ const ProfileDescription = () => {
   );
 };
 
-export default ProfileDescription;
+export default observer(ProfileDescription);
