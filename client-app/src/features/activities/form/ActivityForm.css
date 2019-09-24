@@ -3,7 +3,7 @@
     width: 100% !important;
     padding: 14px 0;
   }
-  .ui.segment:first-child {
-    margin-top: 2rem;
+  .create-activity-form.ui.segment:first-child {
+    margin-top: 3rem;
   }
 }

@@ -1,4 +1,7 @@
 @media (max-width: 500px) {
+  .ui.grid .ui.segments .activity-detailed-segment {
+    margin-top: 3rem;
+  }
   .activity-detailed-segment {
     height: 200px;
   }
@@ -23,7 +26,8 @@
   .activity-detailed-info .ui.attached {
     padding: 14px 5px;
   }
-  .ui.grid>[class*="six wide"].column {
-    width: 100%!important;
-}
+  .ui.grid > [class*='six wide'].column {
+    width: 100% !important;
+    margin-top: 1rem;
+  }
 }

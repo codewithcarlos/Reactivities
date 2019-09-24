@@ -83,7 +83,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
   return (
     <Grid>
       <Grid.Column width={10}>
-        <Segment clearing>
+        <Segment clearing className="create-activity-form">
           <FinalForm
             validate={validate}
             initialValues={activity}

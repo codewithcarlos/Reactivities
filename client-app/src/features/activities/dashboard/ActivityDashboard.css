@@ -21,4 +21,7 @@
     width: 100% !important;
     order: 3;
   }
+  .ui.large.vertical.menu {
+    margin-top: 3rem !important;
+  }
 }

@@ -1,6 +1,10 @@
 @media (max-width: 500px) {
+  #profile-tabs {
+    margin-top: 1rem;
+  }
   .ui.grid > [class*='sixteen wide'].column {
     padding: 14px 0;
+    margin-top: 1rem;
   }
   .ui.grid > [class*='four wide'].column {
     order: 1;
@@ -32,5 +36,8 @@
   }
   .ui.segment {
     margin-bottom: 0;
+  }
+  .ui.segment:first-child {
+    margin-top: 1rem;
   }
 }
