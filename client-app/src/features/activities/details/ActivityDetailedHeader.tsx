@@ -48,7 +48,7 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
                   style={{ color: 'white' }}
                 />
                 <p>{format(activity.date, 'eeee do MMMM')}</p>
-                <p>
+                <p className="host">
                   Hosted by{' '}
                   <Link to={`/profile/${host.username}`}>
                     <strong>{host.displayName}</strong>
@@ -74,7 +74,7 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
             Cancel attendance
           </Button>
         ) : (
-          <Button loading={loading} onClick={attendActivity} color="teal">
+          <Button loading={loading} onClick={attendActivity} color="blue">
             Join Activity
           </Button>
         )}

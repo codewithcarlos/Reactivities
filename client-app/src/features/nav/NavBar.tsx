@@ -79,7 +79,7 @@ const NavBar: React.FC = () => {
         </Menu.Item>
         <Menu.Item header as={NavLink} exact to="/">
           <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} />
-          Reactivities
+          Modern Magic
         </Menu.Item>
         <div className={visible ? 'backdrop' : ''}></div>
       </Container>
@@ -87,7 +87,7 @@ const NavBar: React.FC = () => {
       <Container className="container-desktop">
         <Menu.Item header className="header-mobile" as={NavLink} exact to="/">
           <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} />
-          Reactivities
+          Modern Magic
         </Menu.Item>
         <Menu.Item
           name="Activities"

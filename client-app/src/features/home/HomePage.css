@@ -1,9 +1,36 @@
+@media (min-height: 1366px) {
+  .ui.inverted.header.ipadpro {
+    bottom: 400px;
+  }
+}
+
+@media (max-width: 320px) {
+  .ui.inverted.header.iphone5 {
+    position: relative;
+    bottom: 10rem;
+    font-size: 2em;
+  }
+}
 @media (max-width: 500px) {
   .masthead h1.ui.header {
     font-size: 2.5em;
   }
+}
+/* End of media/mobile styling */
 
-  .ui.huge.button {
-    margin: 0;
-  }
+.ui.huge.button {
+  position: relative;
+  top: 2rem;
+  margin: 0 10px;
+}
+.ui.inverted.header {
+  color: #ffdc00;
+}
+h1.ui.inverted.header {
+  position: relative;
+  bottom: 200px;
+}
+h2.ui.inverted.header {
+  position: relative;
+  top: 2rem;
 }

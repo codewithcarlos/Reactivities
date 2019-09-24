@@ -25,3 +25,15 @@
     margin-top: 3rem !important;
   }
 }
+
+.rw-cell.rw-state-selected, .rw-cell.rw-state-selected:hover {
+  background-color: #f2711c;
+  border-color: #f2711c;
+  color: white;
+}
+.host a {
+  color: #ffdc00;
+}
+.ui.ribbon.label {
+  top: 25px;
+}
