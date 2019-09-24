@@ -7,7 +7,7 @@ const ActivityDetailedInfo: React.FC<{ activity: IActivity }> = ({
   activity
 }) => {
   return (
-    <Segment.Group>
+    <Segment.Group className="activity-detailed-info">
       <Segment attached="top">
         <Grid>
           <Grid.Column width={1}>
@@ -37,9 +37,9 @@ const ActivityDetailedInfo: React.FC<{ activity: IActivity }> = ({
             <Icon name="marker" size="large" color="teal" />
           </Grid.Column>
           <Grid.Column width={11}>
-            <span>
+            <p>
               {activity.venue}, {activity.city}
-            </span>
+            </p>
           </Grid.Column>
         </Grid>
       </Segment>

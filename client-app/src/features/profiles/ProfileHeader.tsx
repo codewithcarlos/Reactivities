@@ -11,6 +11,7 @@ import {
 } from 'semantic-ui-react';
 import { IProfile } from '../../app/models/profile';
 import { observer } from 'mobx-react-lite';
+import './ProfileHeader.css';
 
 interface IProps {
   profile: IProfile;
@@ -32,19 +33,20 @@ const ProfileHeader: React.FC<IProps> = ({
       <Grid>
         <Grid.Column width={12}>
           <Item.Group>
-            <Item>
+            <Item className="image-container">
               <Item.Image
                 avatar
                 size="small"
                 src={profile.image || '/assets/user.png'}
+                id="profile-header-image"
               />
-              <Item.Content verticalAlign="middle">
+              <Item.Content verticalAlign="middle" className="profile-name">
                 <Header as="h1">{profile.displayName}</Header>
               </Item.Content>
             </Item>
           </Item.Group>
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column width={4} className="follow-count">
           <Statistic.Group widths={2}>
             <Statistic label="Followers" value={profile.followersCount} />
             <Statistic label="Following" value={profile.followingCount} />

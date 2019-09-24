@@ -1,0 +1,41 @@
+@media (max-width: 500px) {
+  .ui.items:not(.unstackable) > .item {
+    margin: 0;
+  }
+  .ui.statistic > .label,
+  .ui.statistics .statistic > .label {
+    font-size: 14px;
+  }
+  .ui.statistic > .value,
+  .ui.statistics .statistic > .value {
+    font-size: 3rem !important;
+  }
+  .ui.divider {
+    display: none;
+  }
+  .ui.two.statistics {
+    justify-content: center;
+  }
+  .ui.grid > [class*='twelve wide'].column {
+    width: 50% !important;
+  }
+
+  .ui.small.avatar.image {
+    order: 2;
+  }
+  .profile-name.middle.aligned.content {
+    order: 1;
+    padding: 0 0 10px 0 !important;
+  }
+  .ui.grid > [class*='four wide'].column.follow-count {
+    order: 1;
+    width: 50% !important;
+    padding-right: 0;
+  }
+  #profile-header-image img {
+    max-height: 100px !important;
+  }
+  .ui.fluid.button {
+    margin-top: 10px;
+  }
+}

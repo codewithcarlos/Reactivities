@@ -20,6 +20,7 @@ import {
   hasLengthGreaterThan
 } from 'revalidate';
 import { RootStoreContext } from '../../../app/stores/rootStore';
+import './ActivityForm.css';
 
 const validate = combineValidators({
   title: isRequired({ message: 'The event title is required' }),

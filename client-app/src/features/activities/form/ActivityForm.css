@@ -1,0 +1,9 @@
+@media (max-width: 500px) {
+  .ui.grid > [class*='ten wide'].column {
+    width: 100% !important;
+    padding: 14px 0;
+  }
+  .ui.segment:first-child {
+    margin-top: 2rem;
+  }
+}

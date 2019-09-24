@@ -27,7 +27,12 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
   const host = activity.attendees.filter(x => x.isHost)[0];
   return (
     <Segment.Group>
-      <Segment basic attached="top" style={{ padding: '0' }}>
+      <Segment
+        basic
+        attached="top"
+        style={{ padding: '0' }}
+        className="activity-detailed-segment"
+      >
         <Image
           src={`/assets/categoryImages/${activity.category}.jpg`}
           fluid

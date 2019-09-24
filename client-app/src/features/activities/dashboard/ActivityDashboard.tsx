@@ -6,6 +6,7 @@ import { RootStoreContext } from '../../../app/stores/rootStore';
 import InfiniteScroll from 'react-infinite-scroller';
 import ActivityFilters from './ActivityFilters';
 import ActivityListItemPlaceholder from './ActivityListItemPlaceholder';
+import './ActivityDashboard.css';
 
 const ActivityDashboard: React.FC = () => {
   const rootStore = useContext(RootStoreContext);
@@ -30,7 +31,7 @@ const ActivityDashboard: React.FC = () => {
 
   return (
     <Grid>
-      <Grid.Column width={10}>
+      <Grid.Column width={10} id={"activities-grid"}>
         {loadingInitial && page === 0 ? (
           <ActivityListItemPlaceholder />
         ) : (
@@ -49,10 +50,10 @@ const ActivityDashboard: React.FC = () => {
           </InfiniteScroll>
         )}
       </Grid.Column>
-      <Grid.Column width={6}>
+      <Grid.Column width={6} id="filters-grid">
         <ActivityFilters />
       </Grid.Column>
-      <Grid.Column width={10}>
+      <Grid.Column width={10} id="loader-grid">
         <Loader active={loadingNext} />
       </Grid.Column>
     </Grid>

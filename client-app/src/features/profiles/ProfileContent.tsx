@@ -5,6 +5,7 @@ import ProfileDescription from './ProfileDescription';
 import ProfileFollowings from './ProfileFollowings';
 import ProfileActivities from './ProfileActivities';
 import { observer } from 'mobx-react-lite';
+import './ProfileContent.css';
 
 interface IProps {
   setActiveTab: (activeIndex: any) => void;
@@ -29,6 +30,7 @@ const ProfileContent: React.FC<IProps> = ({ setActiveTab }) => {
       menuPosition="right"
       panes={panes}
       onTabChange={(e, data) => setActiveTab(data.activeIndex)}
+      id="profile-tabs"
     />
   );
 };

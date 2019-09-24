@@ -10,17 +10,17 @@ body {
     rgb(32, 167, 172) 89%
   ) !important;
 }
-
 /*home page styles*/
 
 .masthead {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-image: linear-gradient(
-          135deg,
-          rgb(24, 42, 115) 0%,
-          rgb(33, 138, 174) 69%,
-          rgb(32, 167, 172) 89%
+    135deg,
+    rgb(24, 42, 115) 0%,
+    rgb(33, 138, 174) 69%,
+    rgb(32, 167, 172) 89%
   ) !important;
   height: 100vh;
 }
@@ -40,4 +40,90 @@ body {
   font-weight: normal;
 }
 
+.activities-container-desktop {
+  margin-top: 7em;
+}
+.ui.menu .mobile-menu-container {
+  display: none;
+}
 /*end home page styles*/
+
+/* Mobile Styling */
+@media (max-width: 767px) {
+  #menu-mobile {
+    width: 100%;
+  }
+  .ui.menu .mobile-menu-container {
+    display: flex;
+  }
+  .mobile-menu-sidebar {
+    background: linear-gradient(
+      135deg,
+      rgb(24, 42, 115) 0%,
+      rgb(33, 138, 174) 69%,
+      rgb(32, 167, 172) 89%
+    ) !important;
+  }
+  .backdrop {
+    position: fixed;
+    top: 180px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 250;
+    transition: transform 1s ease-out;
+  }
+
+  .ui.menu > .container-desktop {
+    display: none;
+    margin: auto;
+    padding: 0;
+  }
+  .ui.menu > .container-mobile {
+    display: block;
+    margin: auto;
+    padding: 0;
+  }
+
+  .ui.inverted.menu .header.item.header-mobile {
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+  }
+  .ui.inverted.menu .header.item.header-mobile img {
+    display: none;
+  }
+
+  .ui.inverted.menu .activities-mobile {
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+    background: none !important;
+  }
+
+  .ui.inverted.menu .create-activity {
+    padding: 10px 0px;
+    text-align: center;
+    display: block;
+  }
+
+  .ui.inverted.menu .create-activity a {
+    background: none;
+    font-weight: normal;
+  }
+
+  .ui.inverted.menu .menu-profile {
+    padding: 10px 0;
+    text-align: center;
+    display: block !important;
+  }
+
+  .ui.segment {
+    font-size: 18px;
+  }
+  .activities-container-mobile {
+    margin: 2em 0 0 0;
+  }
+}
+/* End of mobile styling */

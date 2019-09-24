@@ -1,0 +1,29 @@
+@media (max-width: 500px) {
+  .activity-detailed-segment {
+    height: 200px;
+  }
+  .ui.fluid.image {
+    height: 200px;
+  }
+  .ui.grid > [class*='one wide'].column {
+    padding: 0;
+    align-self: center;
+  }
+  .ui.grid > .column:not(.row) {
+    padding: 0;
+  }
+  .activity-detailed-info .ui.grid .wide.column p,
+  .activity-detailed-info .ui.grid .wide.column span {
+    padding: 0 1rem;
+    margin-left: 1rem;
+  }
+  .ui.middle.aligned.grid {
+    justify-content: flex-start;
+  }
+  .activity-detailed-info .ui.attached {
+    padding: 14px 5px;
+  }
+  .ui.grid>[class*="six wide"].column {
+    width: 100%!important;
+}
+}

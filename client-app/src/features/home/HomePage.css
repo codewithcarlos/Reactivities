@@ -1,0 +1,9 @@
+@media (max-width: 500px) {
+  .masthead h1.ui.header {
+    font-size: 2.5em;
+  }
+
+  .ui.huge.button {
+    margin: 0;
+  }
+}
