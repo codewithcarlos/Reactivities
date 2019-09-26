@@ -45,8 +45,8 @@ namespace API
               opt.UseLazyLoadingProxies();
               opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
-            
-            ConfigureServices(services);
+
+      ConfigureServices(services);
     }
 
     public void ConfigureProductionServices(IServiceCollection services)
@@ -57,7 +57,7 @@ namespace API
               opt.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            ConfigureServices(services);
+      ConfigureServices(services);
     }
 
     public void ConfigureServices(IServiceCollection services)
@@ -68,10 +68,11 @@ namespace API
       {
         opt.AddPolicy("CorsPolicy", policy =>
         {
-          policy.AllowAnyHeader()
-          .AllowAnyMethod()
-          .WithExposedHeaders("WWW-Authenticate")
-          .WithOrigins("http://localhost:3000").AllowCredentials();
+          policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithExposedHeaders("WWW-Authenticate")
+            .WithOrigins("http://localhost:3000").AllowCredentials();
         });
       });
       services.AddMediatR(typeof(List.Handler).Assembly);
@@ -146,6 +147,20 @@ namespace API
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         // app.UseHsts();
       }
+
+      app.UseXContentTypeOptions();
+      app.UseReferrerPolicy(opt => opt.NoReferrer());
+      app.UseXXssProtection(opt => opt.EnabledWithBlockMode());
+      app.UseXfo(opt => opt.Deny());
+      app.UseCsp(opt => opt
+        .BlockAllMixedContent()
+        .StyleSources(s => s.Self().CustomSources("https://fonts.googleapis.com", "sha256-F4GpCPyRepgP5znjMD8sc7PEjzet5Eef4r09dEGPpTs="))
+        .FontSources(s => s.Self().CustomSources("https://fonts.gstatic.com", "data:"))
+        .FormActions(s => s.Self())
+        .FrameAncestors(s => s.Self())
+        .ImageSources(s => s.Self().CustomSources("https://res.cloudinary.com", "blob:", "data:"))
+        .ScriptSources(s => s.Self().CustomSources("sha256-EWcbgMMrMgeuxsyT4o76Gq/C5zilrLxiq6oTo2KDqus="))
+      );
 
       // app.UseHttpsRedirection();
       app.UseDefaultFiles();
