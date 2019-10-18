@@ -12,7 +12,8 @@ const validate = combineValidators({
   username: isRequired('username'),
   displayName: isRequired('display name'),
   email: isRequired('email'),
-  password: isRequired('password')
+  password: isRequired('password'),
+  confirmPassword: isRequired('confirm password'),
 });
 
 const RegisterForm = () => {
@@ -49,6 +50,12 @@ const RegisterForm = () => {
             name="password"
             component={TextInput}
             placeholder="Password"
+            type="password"
+          />
+          <Field
+            name="confirmPassword"
+            component={TextInput}
+            placeholder="Confirm Password"
             type="password"
           />
           {submitError && !dirtySinceLastSubmit && (

@@ -23,6 +23,7 @@ namespace Application.User
       public string Username { get; set; }
       public string Email { get; set; }
       public string Password { get; set; }
+      public string ConfirmPassword { get; set; }
     }
 
     public class CommandValidator : AbstractValidator<Command>
@@ -33,6 +34,7 @@ namespace Application.User
         RuleFor(x => x.Username).NotEmpty();
         RuleFor(x => x.Email).NotEmpty().EmailAddress();
         RuleFor(x => x.Password).Password();
+        RuleFor(x => x.ConfirmPassword).Password();
       }
     }
 
@@ -55,6 +57,8 @@ namespace Application.User
 
         if (await _context.Users.Where(x => x.UserName == request.Username).AnyAsync())
           throw new RestException(HttpStatusCode.BadRequest, new { Username = "UserName already exists" });
+        if (request.Password != request.ConfirmPassword)
+          throw new RestException(HttpStatusCode.BadRequest, new { Password = "Passwords have to match" });
 
         var user = new AppUser
         {
@@ -71,8 +75,7 @@ namespace Application.User
           {
             DisplayName = user.DisplayName,
             Token = _jwtGenerator.CreateToken(user),
-            Username = user.UserName,
-            Image = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
+            Username = user.UserName
           };
         }
 

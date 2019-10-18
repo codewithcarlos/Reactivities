@@ -15,28 +15,28 @@ const HomePage = () => {
     <Segment inverted textAlign="center" vertical className="masthead">
       <Container text>
         <Header as="h1" inverted className="iphone5 ipadpro">
-          <Image
+          {/* <Image
             size="massive"
             src="/assets/logo.png"
             alt="logo"
             style={{ marginBottom: 12 }}
-          />
+          /> */}
           Modern Magic
         </Header>
         {isLoggedIn && user && token ? (
           <Fragment>
-            <Header
+            {/* <Header
               as="h2"
               inverted
               content={`Welcome back, ${user.displayName}`}
-            />
+            /> */}
             <Button as={Link} to="/activities" size="huge" inverted>
               Go to activities!
             </Button>
           </Fragment>
         ) : (
           <Fragment>
-            <Header as="h2" inverted content="Welcome to Modern Magic" />
+            {/* <Header as="h2" inverted content="Welcome to Modern Magic" /> */}
             <Button
               onClick={() => openModal(<LoginForm />)}
               to="/login"

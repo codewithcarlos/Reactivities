@@ -20,6 +20,8 @@ import ModalContainer from '../common/modals/ModalContainer';
 import ProfilePage from '../../features/profiles/ProfilePage';
 import PrivateRoute from './PrivateRoute';
 import './styles.css';
+import LandingPage from '../../features/landing/LandingPage';
+import MetagamePage from '../../features/metagame/MetagamePage';
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
   const rootStore = useContext(RootStoreContext);
@@ -66,6 +68,8 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
                   path="/profile/:username"
                   component={ProfilePage}
                 />
+                <PrivateRoute path="/landing" component={LandingPage} />
+                <PrivateRoute path="/metagame" component={MetagamePage} />
                 <Route component={NotFound} />
               </Switch>
             </Container>

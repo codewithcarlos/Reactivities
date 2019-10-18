@@ -62,7 +62,7 @@ namespace API
 
     public void ConfigureServices(IServiceCollection services)
     {
-      IdentityModelEventSource.ShowPII = true;
+      // IdentityModelEventSource.ShowPII = true;
 
       services.AddCors(opt =>
       {

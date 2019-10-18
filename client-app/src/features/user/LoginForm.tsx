@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Form as FinalForm, Field } from 'react-final-form';
-import { Form, Button, Header } from 'semantic-ui-react';
+import { Form, Button, Header, Segment } from 'semantic-ui-react';
 import TextInput from '../../app/common/form/TextInput';
 import { RootStoreContext } from '../../app/stores/rootStore';
 import { IUserFormValues } from '../../app/models/user';
@@ -40,7 +40,14 @@ const LoginForm = () => {
             color="yellow"
             textAlign="center"
           />
-          <Field name="email" component={TextInput} placeholder="Email" />
+          <Header as='h4'>
+            For demo, use<br/> Email: janet@test.com<br/> Password: Janet@1
+          </Header>
+          <Field
+            name="email"
+            component={TextInput}
+            placeholder="Email"
+          />
           <Field
             name="password"
             component={TextInput}

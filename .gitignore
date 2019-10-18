@@ -6,3 +6,6 @@ appsettings.json
 *.db
 wwwroot
 publish
+landing
+metagame
+LandingController.cs

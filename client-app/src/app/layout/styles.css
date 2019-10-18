@@ -3,14 +3,7 @@ body {
 }
 
 .ui.inverted.top.fixed.menu {
-  /* background-image: linear-gradient(
-    135deg,
-    rgb(24, 42, 115) 0%,
-    rgb(33, 138, 174) 69%,
-    rgb(32, 167, 172) 89%
-  ) !important; */
-  background: linear-gradient(to right, #a5673f, #96705B);
-  /* background: linear-gradient(to right, black, white) !important; */
+  /* background: linear-gradient(to right, #a5673f, #96705B); */
 }
 /*home page styles*/
 
@@ -18,13 +11,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: linear-gradient(
-    135deg,
-    rgb(24, 42, 115) 0%,
-    rgb(33, 138, 174) 69%,
-    rgb(32, 167, 172) 89%
-  ) !important; */
-
   background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.5),
@@ -55,6 +41,9 @@ body {
 .ui.menu .mobile-menu-container {
   display: none;
 }
+.img-preview {
+  margin: 5px auto 10px;
+}
 /*end home page styles*/
 
 /* Mobile Styling */
@@ -66,7 +55,7 @@ body {
     display: flex;
   }
   .mobile-menu-sidebar {
-    background: linear-gradient(to right, #a5673f, #96705B) !important;
+    /* background: linear-gradient(to right, #a5673f, #96705B) !important; */
   }
   .backdrop {
     position: fixed;
@@ -90,7 +79,7 @@ body {
     padding: 0;
   }
 
-  .ui.inverted.menu .header.item.header-mobile {
+  .ui.menu .header.item.header-mobile {
     padding: 10px 0;
     text-align: center;
     display: block;
@@ -99,14 +88,18 @@ body {
     display: none;
   }
 
-  .ui.inverted.menu .activities-mobile {
+  .ui.menu .activities-mobile {
     padding: 10px 0;
     text-align: center;
     display: block;
     background: none !important;
   }
 
-  .ui.inverted.menu .create-activity {
+  .ui.menu:not(.vertical) .item {
+    display: block;
+  }
+
+  .ui.menu .create-activity {
     padding: 10px 0px;
     text-align: center;
     display: block;
@@ -117,7 +110,7 @@ body {
     font-weight: normal;
   }
 
-  .ui.inverted.menu .menu-profile {
+  .ui.menu .menu-profile {
     padding: 10px 0;
     text-align: center;
     display: block !important;
@@ -128,6 +121,15 @@ body {
   }
   .activities-container-mobile {
     margin: 2em 0 0 0;
+  }
+  .img-preview {
+    margin: 5px auto 10px;
+  }
+
+}
+@media (max-width: 991px) {
+  .ui.grid .wide.column.mobile-width {
+    width: 100% !important;
   }
 }
 /* End of mobile styling */

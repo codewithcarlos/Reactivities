@@ -57,7 +57,7 @@ const ProfileHeader: React.FC<IProps> = ({
               <Reveal.Content visible style={{ width: '100%' }}>
                 <Button
                   fluid
-                  color="teal"
+                  color="orange"
                   content={profile.following ? 'Following' : 'Not Following'}
                 />
               </Reveal.Content>

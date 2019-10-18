@@ -24,7 +24,7 @@
     float: none;
     margin: 10px 0;
   }
-  .ui.five.cards > .card {
+  .ui.five.cards.doubling > .card {
     width: calc(100% - 1.5em);
   }
   .ui.four.cards > .card {
@@ -40,4 +40,8 @@
   .ui.segment:first-child {
     margin-top: 1rem;
   }
+}
+
+.ui.fluid.two.buttons .button {
+  padding: 10px;
 }

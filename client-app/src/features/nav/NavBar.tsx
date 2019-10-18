@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <Menu borderless fixed="top" inverted id="menu-mobile" className="mobile-menu-container">
+    <Menu borderless fixed="top" id="menu-mobile" className="mobile-menu-container">
       <Container className="mobile-menu-container">
         <Sidebar
           className="mobile-menu-sidebar"
@@ -78,7 +78,7 @@ const NavBar: React.FC = () => {
           />
         </Menu.Item>
         <Menu.Item header as={NavLink} exact to="/">
-          <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} />
+          {/* <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} /> */}
           Modern Magic
         </Menu.Item>
         <div className={visible ? 'backdrop' : ''}></div>
@@ -86,7 +86,7 @@ const NavBar: React.FC = () => {
 
       <Container className="container-desktop">
         <Menu.Item header className="header-mobile" as={NavLink} exact to="/">
-          <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} />
+          {/* <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} /> */}
           Modern Magic
         </Menu.Item>
         <Menu.Item
