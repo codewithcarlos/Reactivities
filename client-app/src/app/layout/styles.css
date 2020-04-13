@@ -1,7 +1,9 @@
 body {
   background-color: rgb(234, 234, 234) !important;
 }
-
+.activities-container-desktop > .ui.grid {
+  margin: 1.5rem 7rem 0 7rem;
+}
 .ui.inverted.top.fixed.menu {
   /* background: linear-gradient(to right, #a5673f, #96705B); */
 }
@@ -16,7 +18,7 @@ body {
       rgba(0, 0, 0, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url('/assets/stoneforge_mystic.jpg') no-repeat center / cover !important;
+    url("/assets/stoneforge_mystic.jpg") no-repeat center / cover !important;
   height: 100vh;
 }
 
@@ -35,14 +37,15 @@ body {
   font-weight: normal;
 }
 
-.activities-container-desktop {
-  margin-top: 7em;
-}
 .ui.menu .mobile-menu-container {
   display: none;
 }
 .img-preview {
   margin: 5px auto 10px;
+}
+.ui.menu {
+  margin: 0;
+  border: none;
 }
 /*end home page styles*/
 
@@ -125,7 +128,6 @@ body {
   .img-preview {
     margin: 5px auto 10px;
   }
-
 }
 @media (max-width: 991px) {
   .ui.grid .wide.column.mobile-width {

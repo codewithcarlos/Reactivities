@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <Menu borderless fixed="top" id="menu-mobile" className="mobile-menu-container">
+    <Menu borderless id="menu-mobile" className="mobile-menu-container">
       <Container className="mobile-menu-container">
         <Sidebar
           className="mobile-menu-sidebar"

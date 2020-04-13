@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  color: #222;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  margin: 0;
+}
+button {
+  cursor: pointer;
+}
+.commands button:hover {
+  color: #e49b0f;
+  background: rgba(68, 91, 22, 0.9);
+}
+.playtest {
+  /* margin: 0 10px; */
+}
+.card-image {
+  height: 170px;
+  width: auto;
+  position: relative;
+  border-radius: 5px;
+}
+.zones .card-image {
+  height: 170px;
+}
+.card {
+  /* margin: 0 0.5%; */
+}
+.card-container {
+  display: block;
+  margin-right: 1px;
+  /* position: absolute; */
+}
+.hand {
+  display: flex;
+  width: 960px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 210px;
+  margin-right: 15px;
+  align-items: center;
+  overflow: visible;
+}
+.rotated {
+  transform: rotate(90deg);
+}
+.battleground {
+  width: 80%;
+  margin-bottom: 15px;
+  background-image: url("https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2016/05/deathrite-shaman-1024x592.jpg");
+  /* z-index: -1; */
+  background-repeat: no-repeat;
+  height: 475px;
+  position: relative;
+}
+.box {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  width: 180px;
+  height: 180px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+.zones {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 210px;
+}
+.container-flex {
+  display: flex;
+  margin-left: 10px;
+}
+.mtg-logo {
+  height: 100px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+.graveyard-slot,
+.exiled-slot,
+#deck {
+  border: 1px dashed #44322b;
+  padding: 5px;
+  height: 182px;
+  width: 135px;
+  margin-right: 10px;
+}
+.exiled-slot {
+  margin-right: 0;
+}
+.commands {
+  margin-left: 1%;
+  width: 200px;
+}
+.commands button {
+  display: block;
+  background-color: #445b16;
+  height: 36px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.search .dropdown {
+  margin-bottom: 2%;
+}
+.popup.hide {
+  display: none;
+}
+.popup {
+  position: absolute;
+  z-index: 2;
+  transform: translate(0px, -40px);
+  display: flex;
+  background-color: #fff;
+  height: auto;
+  justify-content: center;
+  width: 122px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.popup button {
+  margin: 3%;
+}
+.search-graveyard .search .dropdown {
+  z-index: 3;
+}
+.search-library .search .dropdown {
+  z-index: 4;
+}
+.playtest .ui.menu {
+  background-color: #445b16 !important;
+  height: 50px;
+  border-radius: 0;
+}
+.playtest .ui.inverted.menu a.item:hover {
+  color: #e49b0f;
+}
