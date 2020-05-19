@@ -75,7 +75,8 @@ export default class PlaytestStore {
   @action newGame = () => {
     // console.log("library is", this.library, mockDeck);
     if (!Array.isArray(this.library)) {
-      this.getCardImages(this.importedDeck);
+      this.getCardImages();
+      // this.getCardImages(this.importedDeck);
       return;
     }
     const shuffledDeck = this.shuffle([
@@ -94,19 +95,22 @@ export default class PlaytestStore {
     // console.log(shuffledDeck, this.library);
   };
 
-  @action getCardImages = async (importedDeck: string[] | ICard[]) => {
+  // @action getCardImages = async (importedDeck: string[] | ICard[]) => {
+  @action getCardImages = async () => {
     console.log("axios called");
 
     try {
-      const data = await agent.Decks.deck(importedDeck);
-      runInAction(() => {
-        console.log("getCardImages", data);
-        for (let i = 0; i < data.length; i++) {
-          data[i]["cardID"] = i;
-        }
-        this.hand = data.slice(0, 7);
-        this.library = data.slice(7);
-      });
+      const data = await agent.Decks.deck();
+      // const data = await agent.Decks.deck(importedDeck);
+      console.log("axios data is:", data);
+      // runInAction(() => {
+      //   console.log("getCardImages", data);
+      //   for (let i = 0; i < data.length; i++) {
+      //     data[i]["cardID"] = i;
+      //   }
+      //   this.hand = data.slice(0, 7);
+      //   this.library = data.slice(7);
+      // });
     } catch (error) {
       toast.error("Problem getting card images for deck");
       console.log("error", error);

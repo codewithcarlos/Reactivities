@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Segment,
   Item,
@@ -7,11 +7,11 @@ import {
   Grid,
   Statistic,
   Divider,
-  Reveal
-} from 'semantic-ui-react';
-import { IProfile } from '../../app/models/profile';
-import { observer } from 'mobx-react-lite';
-import './ProfileHeader.css';
+  Reveal,
+} from "semantic-ui-react";
+import { IProfile } from "../../app/models/profile";
+import { observer } from "mobx-react-lite";
+import "./ProfileHeader.css";
 
 interface IProps {
   profile: IProfile;
@@ -26,18 +26,18 @@ const ProfileHeader: React.FC<IProps> = ({
   follow,
   unfollow,
   isCurrentUser,
-  loading
+  loading,
 }) => {
   return (
     <Segment>
       <Grid>
-        <Grid.Column width={12}>
+        <Grid.Column width={11}>
           <Item.Group>
             <Item className="image-container">
               <Item.Image
                 avatar
                 size="small"
-                src={profile.image || '/assets/user.png'}
+                src={profile.image || "/assets/user.png"}
                 id="profile-header-image"
               />
               <Item.Content verticalAlign="middle" className="profile-name">
@@ -54,11 +54,11 @@ const ProfileHeader: React.FC<IProps> = ({
           <Divider />
           {!isCurrentUser && (
             <Reveal animated="move">
-              <Reveal.Content visible style={{ width: '100%' }}>
+              <Reveal.Content visible style={{ width: "100%" }}>
                 <Button
                   fluid
                   color="orange"
-                  content={profile.following ? 'Following' : 'Not Following'}
+                  content={profile.following ? "Following" : "Not Following"}
                 />
               </Reveal.Content>
               <Reveal.Content hidden>
@@ -66,8 +66,8 @@ const ProfileHeader: React.FC<IProps> = ({
                   loading={loading}
                   fluid
                   basic
-                  color={profile.following ? 'red' : 'green'}
-                  content={profile.following ? 'Unfollow' : 'Follow'}
+                  color={profile.following ? "red" : "green"}
+                  content={profile.following ? "Unfollow" : "Follow"}
                   onClick={
                     profile.following
                       ? () => {

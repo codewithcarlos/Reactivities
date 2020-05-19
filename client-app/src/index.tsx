@@ -15,6 +15,12 @@ dateFnsLocalizer();
 
 export const history = createBrowserHistory();
 
+
+// history.listen( location =>  {
+//   //Do your stuff here
+//   console.log('yo', location);
+//  });
+
 ReactDOM.render(
   <Router history={history}>
     <ScrollToTop>

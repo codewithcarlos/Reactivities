@@ -15,6 +15,7 @@ namespace Persistence
     public DbSet<Photo> Photos { get; set; }
     public DbSet<Comment> Comments { get; set; }
     public DbSet<UserFollowing> Followings { get; set; }
+    public DbSet<Card> Cards { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -24,7 +25,10 @@ namespace Persistence
         .HasData(
           new Value { Id = 1, Name = "Value 101" },
           new Value { Id = 2, Name = "Value 102" },
-          new Value { Id = 3, Name = "Value 103" }
+          new Value { Id = 3, Name = "Value 103" },
+          new Value { Id = 4, Name = "Value 104" },
+          new Value { Id = 5, Name = "Value 105" },
+          new Value { Id = 6, Name = "Value 106" }
         );
 
       // create the primary key
@@ -41,9 +45,9 @@ namespace Persistence
         .WithMany(u => u.UserActivities)
         .HasForeignKey(a => a.ActivityId);
 
-      builder.Entity<UserFollowing>(b => 
+      builder.Entity<UserFollowing>(b =>
       {
-        b.HasKey(k => new{k.ObserverId, k.TargetId});
+        b.HasKey(k => new { k.ObserverId, k.TargetId });
 
         b.HasOne(o => o.Observer)
         .WithMany(f => f.Followings)

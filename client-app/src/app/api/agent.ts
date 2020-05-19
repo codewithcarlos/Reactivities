@@ -106,8 +106,10 @@ const Profiles = {
 };
 
 const Decks = {
-  deck: (importedDeck: string[] | ICard[]): Promise<ICard[]> =>
-    axios.get("/decks", { params: importedDeck }).then(responseBody),
+  deck: (): Promise<ICard[]> =>
+    axios.get("/playtest").then(responseBody),
+  // deck: (importedDeck: string[] | ICard[]): Promise<ICard[]> =>
+  //   axios.get("/playtest", { params: importedDeck }).then(responseBody),
 };
 
 export default {

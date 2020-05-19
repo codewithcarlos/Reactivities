@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 import {
   Menu,
   Container,
@@ -7,11 +7,11 @@ import {
   Dropdown,
   Icon,
   Sidebar,
-  Segment
-} from 'semantic-ui-react';
-import { observer } from 'mobx-react-lite';
-import { NavLink, Link } from 'react-router-dom';
-import { RootStoreContext } from '../../app/stores/rootStore';
+  Segment,
+} from "semantic-ui-react";
+import { observer } from "mobx-react-lite";
+import { NavLink, Link } from "react-router-dom";
+import { RootStoreContext } from "../../app/stores/rootStore";
 
 const NavBar: React.FC = () => {
   const rootStore = useContext(RootStoreContext);
@@ -34,12 +34,12 @@ const NavBar: React.FC = () => {
         >
           {user && (
             <Menu.Item position="right" className="menu-profile">
-              <Image
+              {/* <Image
                 avatar
                 spaced="right"
-                src={user.image || '/assets/user.png'}
-              />
-              <Dropdown pointing="top left" text={user.displayName}>
+                src={user.image || "/assets/user.png"}
+              /> */}
+              <Dropdown pointing="top left" text={user.displayName} icon="user">
                 <Dropdown.Menu>
                   <Dropdown.Item
                     as={Link}
@@ -81,12 +81,11 @@ const NavBar: React.FC = () => {
           {/* <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} /> */}
           Modern Magic
         </Menu.Item>
-        <div className={visible ? 'backdrop' : ''}></div>
+        <div className={visible ? "backdrop" : ""}></div>
       </Container>
 
       <Container className="container-desktop">
         <Menu.Item header className="header-mobile" as={NavLink} exact to="/">
-          {/* <img src="/assets/logo.png" alt="logo" style={{ marginRight: 10 }} /> */}
           Modern Magic
         </Menu.Item>
         <Menu.Item
@@ -110,8 +109,8 @@ const NavBar: React.FC = () => {
               spaced="right"
               src={user.image || '/assets/user.png'}
             />
-            <Dropdown pointing="top left" text={user.displayName}>
-              <Dropdown.Menu>
+            <Dropdown pointing="top right" text={user.displayName} >
+              <Dropdown.Menu >
                 <Dropdown.Item
                   as={Link}
                   to={`/profile/${user.username}`}

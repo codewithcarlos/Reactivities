@@ -2,7 +2,7 @@ body {
   background-color: rgb(234, 234, 234) !important;
 }
 .activities-container-desktop > .ui.grid {
-  margin: 1.5rem 7rem 0 7rem;
+  margin-top: 7em;
 }
 .ui.inverted.top.fixed.menu {
   /* background: linear-gradient(to right, #a5673f, #96705B); */
@@ -122,8 +122,8 @@ body {
   .ui.segment {
     font-size: 18px;
   }
-  .activities-container-mobile {
-    margin: 2em 0 0 0;
+  .activities-container-mobile, .activities-container-mobile > .ui.grid {
+    margin: 0;
   }
   .img-preview {
     margin: 5px auto 10px;

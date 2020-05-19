@@ -57,7 +57,7 @@ const ProfileEvents = () => {
             onTabChange={(e, data) => handleTabChange(e, data)}
           />
           <br />
-          <Card.Group itemsPerRow={4}>
+          <Card.Group itemsPerRow={4} doubling>
             {userActivities.map((activity: IUserActivity) => (
               <Card
                 as={Link}

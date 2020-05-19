@@ -9,8 +9,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190927224135_AddedConfirmPassword")]
-    partial class AddedConfirmPassword
+    [Migration("20200413191042_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,6 +92,22 @@ namespace Persistence.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Domain.Card", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<int>("Multiverseid");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cards");
                 });
 
             modelBuilder.Entity("Domain.Comment", b =>
@@ -190,6 +206,21 @@ namespace Persistence.Migrations
                         {
                             Id = 3,
                             Name = "Value 103"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Value 104"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Value 105"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Value 106"
                         });
                 });
 

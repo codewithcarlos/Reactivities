@@ -25,7 +25,7 @@
     margin: 10px 0;
   }
   .ui.five.cards.doubling > .card {
-    width: calc(100% - 1.5em);
+    /* width: calc(100% - 1.5em); */
   }
   .ui.four.cards > .card {
     width: calc(100% - 1.5em);

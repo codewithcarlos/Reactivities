@@ -36,6 +36,11 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
     }
   }, [getUser, setAppLoaded, token]);
 
+  useEffect(() => {
+    const { setActiveTab } = rootStore.profileStore;
+    setActiveTab(0);
+  }, [location.pathname, rootStore.profileStore]);
+
   if (!appLoaded) return <LoadingComponent content="Loading app..." />;
 
   return (
@@ -48,7 +53,6 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
         render={() => (
           <Fragment>
             <NavBar />
-            <div className="activities-container-desktop activities-container-mobile">
               <Switch>
                 <Route exact path="/activities" component={ActivityDashboard} />
                 <PrivateRoute
@@ -72,7 +76,6 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
                 />
                 <Route component={NotFound} />
               </Switch>
-            </div>
           </Fragment>
         )}
       />

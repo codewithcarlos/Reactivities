@@ -21,18 +21,6 @@ export default class ProfileStore {
       }
     );
 
-    reaction(
-      () => this.followStateChanged,
-      followStateChanged => {
-        if (this.activeTab === 3 || this.activeTab === 4) {
-          const predicate = this.activeTab === 3 ? 'followers' : 'following';
-          this.loadFollowings(predicate);
-        } else {
-          this.followings = [];
-        }
-      }
-    );
-    
   }
 
   @observable profile: IProfile | null = null;

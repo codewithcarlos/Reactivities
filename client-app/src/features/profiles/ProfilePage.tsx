@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react';
-import { Grid } from 'semantic-ui-react';
-import ProfileHeader from './ProfileHeader';
-import ProfileContent from './ProfileContent';
-import { RootStoreContext } from '../../app/stores/rootStore';
-import { RouteComponentProps } from 'react-router';
-import LoadingComponent from '../../app/layout/LoadingComponent';
-import { observer } from 'mobx-react-lite';
+import React, { useContext, useEffect } from "react";
+import { Grid, Container } from "semantic-ui-react";
+import ProfileHeader from "./ProfileHeader";
+import ProfileContent from "./ProfileContent";
+import { RootStoreContext } from "../../app/stores/rootStore";
+import { RouteComponentProps } from "react-router";
+import LoadingComponent from "../../app/layout/LoadingComponent";
+import { observer } from "mobx-react-lite";
 
 interface RouteParams {
   username: string;
@@ -23,7 +23,7 @@ const ProfilePage: React.FC<IProps> = ({ match }) => {
     unfollow,
     isCurrentUser,
     loading,
-    setActiveTab
+    setActiveTab,
   } = rootStore.profileStore;
 
   useEffect(() => {
@@ -33,18 +33,20 @@ const ProfilePage: React.FC<IProps> = ({ match }) => {
   if (loadingProfile) return <LoadingComponent content="Loading Profile..." />;
 
   return (
-    <Grid>
-      <Grid.Column width={16}>
-        <ProfileHeader
-          profile={profile!}
-          follow={follow}
-          unfollow={unfollow}
-          isCurrentUser={isCurrentUser}
-          loading={loading}
-        />
-        <ProfileContent setActiveTab={setActiveTab}/>
-      </Grid.Column>
-    </Grid>
+    <Container className="activities-container-desktop activities-container-mobile">
+      <Grid>
+        <Grid.Column width={16}>
+          <ProfileHeader
+            profile={profile!}
+            follow={follow}
+            unfollow={unfollow}
+            isCurrentUser={isCurrentUser}
+            loading={loading}
+          />
+          <ProfileContent setActiveTab={setActiveTab} />
+        </Grid.Column>
+      </Grid>
+    </Container>
   );
 };
 

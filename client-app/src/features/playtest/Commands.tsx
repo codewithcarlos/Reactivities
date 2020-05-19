@@ -14,10 +14,12 @@ const Commands = () => {
     handeleUntapAll,
     graveyard,
     exiled,
+    getCardImages
   } = rootStore.playtestStore;
   // console.log('commands rerendered');
   return (
     <div className="commands">
+      <button onClick={() => getCardImages()}>Get card images</button>
       <button onClick={() => newGame()}>New Game</button>
       <div className="search-library">
         <Search
